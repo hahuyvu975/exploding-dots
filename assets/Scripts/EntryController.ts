@@ -86,13 +86,22 @@ export class EntryController extends Component {
     protected onPlayGame(): void {
         if (localStorage.getItem('volume') === '1') {
             this.onAudioQueue(0);
-        } else {
-
-        }
+        } 
         director.loadScene(Constants.GameGame);
     }
 
+    protected onResetScore(): void {
+        if (localStorage.getItem('volume') === '1') {
+            this.onAudioQueue(0);
+        }
+        localStorage.setItem('maxScore', '0');
+        this.numberHighScore.string = '0';
+    }
+
     protected onClickTurnOn(): void {
+        if (localStorage.getItem('volume') === '1') {
+            this.onAudioQueue(0);
+        }
         localStorage.setItem('volume', '0');
         this.btnSound.active = false;
         this.btnSilent.active = true;

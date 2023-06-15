@@ -119,7 +119,7 @@
       "a": 255
     },
     "_spriteFrame": {
-      "__uuid__": "bbc63032-4659-4fae-b2ed-3a2f013fc36d@f9941",
+      "__uuid__": "52ba4b83-dd99-4042-9a64-0c01bc683e4d@f9941",
       "__expectedType__": "cc.SpriteFrame"
     },
     "_type": 0,
@@ -188,7 +188,7 @@
       "a": 255
     },
     "_normalSprite": {
-      "__uuid__": "bbc63032-4659-4fae-b2ed-3a2f013fc36d@f9941",
+      "__uuid__": "52ba4b83-dd99-4042-9a64-0c01bc683e4d@f9941",
       "__expectedType__": "cc.SpriteFrame"
     },
     "_hoverSprite": null,
@@ -229,12 +229,6 @@
     "__prefab": {
       "__id__": 10
     },
-    "triggerTop": null,
-    "triggerBottom": null,
-    "triggerLeft": null,
-    "triggerRight": null,
-    "canvas": null,
-    "scoreGame": null,
     "_id": ""
   },
   {
@@ -255,7 +249,7 @@
     "enabledContactListener": true,
     "bullet": false,
     "awakeOnLoad": true,
-    "_group": 1,
+    "_group": 4,
     "_type": 2,
     "_allowSleep": false,
     "_gravityScale": 0,
@@ -289,7 +283,7 @@
     "_group": 4,
     "_density": 1,
     "_sensor": false,
-    "_friction": 0.2,
+    "_friction": 0,
     "_restitution": 0,
     "_offset": {
       "__type__": "cc.Vec2",
@@ -312,6 +306,7 @@
       "__id__": 0
     },
     "fileId": "9bJsVdSFNAeJmTBLbxLTCs",
+    "instance": null,
     "targetOverrides": null
   }
 ]

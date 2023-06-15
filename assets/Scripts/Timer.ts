@@ -15,6 +15,10 @@ export class Timer extends Component {
         this.labelTime = value;
     }
 
+    public setLabelString(value: string): void{
+        this.LabelTime.string = value;
+    }
+
     private timeStart: number = 3;
 
     public get TimeStart(): number {
@@ -26,7 +30,6 @@ export class Timer extends Component {
     
     public reduceTime(): void {
         this.timeStart--;
-        console.log(this.timeStart);
         this.labelTime.string = `${this.timeStart}`
     }
 }
