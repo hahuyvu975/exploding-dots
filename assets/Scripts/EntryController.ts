@@ -61,8 +61,6 @@ export class EntryController extends Component {
         } else {
             this.currentScore = 0;
         }
-
-
     }
 
     protected start(): void {
@@ -96,6 +94,7 @@ export class EntryController extends Component {
         }
         localStorage.setItem('maxScore', '0');
         this.numberHighScore.string = '0';
+        this.numberCurrentScore.string = '0';
     }
 
     protected onClickTurnOn(): void {
