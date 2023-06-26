@@ -104,7 +104,6 @@ export class GameController extends Component {
         }, 1);
     }
     protected scheduleTimeOV(): void {
-        console.log(this.timeOV.TimeOver)
         this.schedule(function () {
             if (this.timeOV.TimeOver > 1) {
                 this.timeOV.reduceTimeOV();
@@ -137,49 +136,6 @@ export class GameController extends Component {
         this.CircleNode.parent = this.canvas;
 
         this.CircleNode.addChild(this.tempNode);
-
-        const collider = this.tempNode.getComponent(Collider2D)
-        if (collider) {
-            // Gán sự kiện cho Collider2D của prefab
-            collider.on(Contact2DType.BEGIN_CONTACT, this.onBeginContact, this);
-        }
-    }
-
-    protected onBeginContact(selfCollider: Collider2D, otherCollider: Collider2D, contact: IPhysics2DContact | null): void {
-        const rigidSelf = selfCollider.getComponent(RigidBody2D);
-        const rigidOther = otherCollider.getComponent(RigidBody2D);
-        const num = randomRange(10, 15)
-    
-        switch (otherCollider.node) {
-            case this.triggerLeft:
-                // rigidSelf.applyForceToCenter(new Vec2(num, 10).multiplyScalar(1000 / num), true);
-                break;
-            case this.triggerRight:
-                // rigidSelf.applyForceToCenter(new Vec2(-num * 2, 10).multiplyScalar(1000 / num), true);
-                break;
-            case this.triggerTop:
-                // rigidSelf.applyForceToCenter(new Vec2(10, -num * 2).multiplyScalar(1000 / num), true);
-                break;
-            case this.triggerBottom:
-                // rigidSelf.applyForceToCenter(new Vec2(10, num * 2).multiplyScalar(1000 / num), true);
-                break;
-            default:
-               // Xử lý trường hợp mặc định khi không xác định được loại va chạm
-            // const selfVelocity = rigidSelf.linearVelocity;
-            // const otherVelocity = rigidOther.linearVelocity;
-            // const restitution = 0.5; // Hệ số đàn hồi
-
-            // // Tính toán vector vận tốc mới cho selfCollider
-            // const newSelfVelocity = selfVelocity.subtract(otherVelocity).multiplyScalar(restitution);
-
-            // // Tính toán lực mới dựa trên sự thay đổi vận tốc
-            // const newForce = newSelfVelocity.multiplyScalar(rigidSelf.mass / TIME_STEP);
-
-            // // Áp dụng lực mới vào selfCollider
-            // rigidSelf.applyForceToCenter(newForce, true);
-            break;
-            
-        }
     }
 
     protected createSubNodes(count: number): void {
@@ -190,10 +146,6 @@ export class GameController extends Component {
             const element = instantiate(this.circlePrefab);
             element.parent = this.CircleNode;
             element.on(Node.EventType.TOUCH_START, this.onTouchObject, this);
-            // const collider = element.getComponent(Collider2D);
-            // if (collider) {
-            //     collider.on(Contact2DType.BEGIN_CONTACT, this.onBeginContact, this);
-            // }
             this.currentClone++;
         }
     }
@@ -257,20 +209,15 @@ export class GameController extends Component {
         if(localStorage.getItem('volume') === '1') {
             this.onAudioQueue(0);
         }
-        console.log('test',this.isGamePaused)
         if(this.isGamePaused) {
             director.resume();
             this.isGamePaused = false;
             this.btnResume.active = true;
-            this.btnPause.active = false;
-            console.log('1',this.isGamePaused)
-            console.log('if resume pause game')
+            this.btnPause.active = false;    
         }else {
             this.btnResume.active = false;
             this.btnPause.active = true;
-            console.log('else pause game')
             director.pause();
-            console.log('2',this.isGamePaused)
             this.isGamePaused = true;
         }
     }

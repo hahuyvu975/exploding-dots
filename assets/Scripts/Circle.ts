@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Collider2D, Contact2DType, IPhysics2DContact, Vec2, RigidBody2D, randomRange, math } from 'cc';
+import { _decorator, Component, Vec2, RigidBody2D, randomRange} from 'cc';
 
 const { ccclass, property } = _decorator;
 

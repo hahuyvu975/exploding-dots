@@ -10,11 +10,7 @@ export class AudioSoundTrack extends Component {
     private audioSoundTrack: AudioSource = null;
 
     protected onLoad(): void {
-        // this.audioSoundTrack = this.node.getComponent(AudioSource);
-        // if (localStorage.getItem('volume') === '0') {
-        //     this.audioSoundTrack.pause();
-
-        // }
+    
     }
 
    

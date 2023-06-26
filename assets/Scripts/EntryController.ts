@@ -55,7 +55,6 @@ export class EntryController extends Component {
         let node = find(Constants.GameParamater)
         if (node) {
             this.currentScore = node.getComponent(GameParamater).IndexScore;
-            console.log(this.currentScore);
             node.destroy();
 
         } else {

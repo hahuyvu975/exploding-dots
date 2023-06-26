@@ -26,20 +26,5 @@ export class AudioEntry extends Component {
     public set AudioSource(value: AudioSource) {
         this.audioSource = value;
     }
-
-    // @property({
-    //     type: AudioSource
-    // })
-    // private audioBg: AudioSource = null;
-
-    // public get AudioBg(): AudioSource {
-    //     return this.audioBg;
-    // }
-    // public set AudioBg(value: AudioSource) {
-    //     this.audioBg = value;
-    // }
-    
-    
-
 }
 
